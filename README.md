@@ -1,5 +1,5 @@
 # LineChart
-Make a line chart with Swift 3.2 and the awesome iOS Charts framework 
+Make a line chart with Swift 3.2 and this [awesome iOS Charts framework](https://github.com/danielgindi/Charts) by [@danielgindi](https://github.com/danielgindi) 
 
 
 
