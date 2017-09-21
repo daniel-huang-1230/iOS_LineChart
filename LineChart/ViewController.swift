@@ -29,13 +29,16 @@ class ViewController: UIViewController {
 
     @IBAction func goBtnPressed(_ sender: Any) {
         
-        let input = Double(textBox.text!)   //the input num is expected to be double
-            
+        if let input = Double(textBox.text!) {  //the input num is expected to be double
+      
         textBox.text? = ""    //clean the text field once the button is pressed
-        numbers.append(input!) //here we add the data entered by the user to the array
+        numbers.append(input) //here we add the data entered by the user to the array
         updateGraph()
+        } else{
+            textBox.text? = ""   
+            
+        }
     }
-    
     func updateGraph(){
         
         var lineChartEntry = [ChartDataEntry]()
