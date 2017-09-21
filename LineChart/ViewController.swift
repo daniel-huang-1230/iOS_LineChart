@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         let input = Double(textBox.text!)   //the input num is expected to be double
             
-        
+        textBox.text? = ""    //clean the text field once the button is pressed
         numbers.append(input!) //here we add the data entered by the user to the array
         updateGraph()
     }
@@ -51,12 +51,20 @@ class ViewController: UIViewController {
         
         //now we need to create the actual line
         
-        let line = LineChartDataSet(values: lineChartEntry, label: "Number")
+        let first_line = LineChartDataSet(values: lineChartEntry, label: "Number")
         
         //set the color to yellow
         
-        line.colors = [NSUIColor.yellow]
+        first_line.colors = [NSUIColor.yellow]
         
+        // CAN-DO: further customization!!
+        
+        let data = LineChartData() // the object that the chart displays and will be plotted with the line I just created
+        
+        data.addDataSet(first_line)
+        
+        chartView.chartDescription?.text = "Daniel's first line chart"
+        chartView.data = data // lastly, update the view, bang!
         
     }
     
